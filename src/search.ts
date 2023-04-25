@@ -56,7 +56,7 @@ interface SearchConfig {
 const searchConfigFacet: Facet<SearchConfig, Required<SearchConfig>> = Facet.define({
   combine(configs) {
     return combineConfig(configs, {
-      top: false,
+      top: true,
       caseSensitive: false,
       literal: false,
       wholeWord: false,
@@ -639,11 +639,11 @@ class SearchPanel implements Panel {
     this.dom = elt("div", {onkeydown: (e: KeyboardEvent) => this.keydown(e), class: "cm-search"}, [
       this.searchField,
       button("next", () => findNext(view), [phrase(view, "next")]),
-      button("prev", () => findPrevious(view), [phrase(view, "previous")]),
+      button("prev", () => findPrevious(view), [phrase(view, "prev")]),
       button("select", () => selectMatches(view), [phrase(view, "all")]),
-      elt("label", null, [this.caseField, phrase(view, "match case")]),
-      elt("label", null, [this.reField, phrase(view, "regexp")]),
-      elt("label", null, [this.wordField, phrase(view, "by word")]),
+      elt("label", null, [this.caseField, phrase(view, "Ab")]),
+      elt("label", null, [this.reField, phrase(view, ".*")]),
+      elt("label", null, [this.wordField, phrase(view, "⎵")]),
       ...view.state.readOnly ? [] : [
         elt("br"),
         this.replaceField,
