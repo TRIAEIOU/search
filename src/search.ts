@@ -605,7 +605,7 @@ class SearchPanel implements Panel {
       "main-field": "true",
       onchange: this.commit,
       onkeyup: this.commit,
-      tabindex: 1
+      tabindex: "1"
     }) as HTMLInputElement
     this.replaceField = elt("input", {
       value: query.replace,
@@ -616,7 +616,7 @@ class SearchPanel implements Panel {
       form: "",
       onchange: this.commit,
       onkeyup: this.commit,
-      tabindex: 1
+      tabindex: "1"
     }) as HTMLInputElement
     this.caseField = elt("input", {
       type: "checkbox",

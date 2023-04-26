@@ -992,7 +992,8 @@ class SearchPanel {
             form: "",
             "main-field": "true",
             onchange: this.commit,
-            onkeyup: this.commit
+            onkeyup: this.commit,
+            tabindex: "1"
         });
         this.replaceField = elt__default["default"]("input", {
             value: query.replace,
@@ -1002,7 +1003,8 @@ class SearchPanel {
             name: "replace",
             form: "",
             onchange: this.commit,
-            onkeyup: this.commit
+            onkeyup: this.commit,
+            tabindex: "1"
         });
         this.caseField = elt__default["default"]("input", {
             type: "checkbox",
