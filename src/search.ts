@@ -32,6 +32,10 @@ interface SearchConfig {
   /// Defaults to false.
   wholeWord?: boolean
 
+  /// Used to turn on regular expression search in the default query.
+  /// Defaults to false.
+  regexp?: boolean
+
   /// Can be used to override the way the search panel is implemented.
   /// Should create a [Panel](#view.Panel) that contains a form
   /// which lets the user:
@@ -206,7 +210,7 @@ class StringQuery extends QueryType<SearchResult> {
     return cursor.done ? null : cursor.value
   }
 
-  // Searching in reverse is, rather than implementing inverted search
+  // Searching in reverse is, rather than implementing an inverted search
   // cursor, done by scanning chunk after chunk forward.
   private prevMatchInRange(state: EditorState, from: number, to: number) {
     for (let pos = to;;) {
