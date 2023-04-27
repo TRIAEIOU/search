@@ -25,9 +25,6 @@ interface SearchConfig {
   /// Whether to treat string searches literally by default (defaults to false).
   literal?: boolean
 
-  /// Whether to treat string searches as regexps by default (defaults to false).
-  regexp?: boolean
-
   /// Controls whether the default query has by-word matching enabled.
   /// Defaults to false.
   wholeWord?: boolean

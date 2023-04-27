@@ -608,7 +608,7 @@ class StringQuery extends QueryType {
             cursor = stringCursor(this.spec, state, 0, curFrom).nextOverlapping();
         return cursor.done ? null : cursor.value;
     }
-    // Searching in reverse is, rather than implementing inverted search
+    // Searching in reverse is, rather than implementing an inverted search
     // cursor, done by scanning chunk after chunk forward.
     prevMatchInRange(state, from, to) {
         for (let pos = to;;) {

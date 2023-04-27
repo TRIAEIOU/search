@@ -79,8 +79,8 @@ interface SearchConfig {
     top?: boolean;
     caseSensitive?: boolean;
     literal?: boolean;
-    regexp?: boolean;
     wholeWord?: boolean;
+    regexp?: boolean;
     createPanel?: (view: EditorView) => Panel;
     scrollToMatch?: (range: SelectionRange, view: EditorView) => StateEffect<unknown>;
 }
